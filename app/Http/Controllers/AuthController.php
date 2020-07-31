@@ -42,4 +42,33 @@ class AuthController extends Controller
             return redirect('/');
         }
     }
+
+    /**
+     * Get all session data needed
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function getSession(Request $request)
+    {
+        $session['user'] = $request->session()->get('user');
+        $session['form'] = $request->session()->get('form');
+
+        return $session;
+    }
+
+    /**
+     * Store data to session
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function putSession(Request $request)
+    {
+        $request->session()->put('form.' . $request->key, $request->value);
+
+        return [
+            'value' => $request->value
+        ];
+    }
 }

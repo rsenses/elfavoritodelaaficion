@@ -22,10 +22,16 @@ class HomeController extends Controller
             'last_name2' => $request->session()->get('user.last_name2'),
             'zip' => $request->session()->get('user.zip'),
         ];
+        $form = [
+            'team' => $request->session()->get('form.team'),
+            'player' => $request->session()->get('form.player'),
+            'reason' => $request->session()->get('form.reason'),
+        ];
 
         return view('welcome', [
             'is_logged' => empty($user['email']) ? false : true,
-            'user' => $user
+            'user' => $user,
+            'form' => $form,
         ]);
     }
 

@@ -18,3 +18,5 @@ Route::get('/poll', 'PollController@index');
 Route::post('/poll', 'PollController@store');
 Route::get('/thanks', 'HomeController@thanks');
 Route::get('/login', 'AuthController@login');
+Route::get('/auth/session', 'AuthController@getSession');
+Route::post('/auth/save-session', 'AuthController@putSession');

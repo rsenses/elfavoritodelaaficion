@@ -3,6 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="csrf-token" content="{{ csrf_token() }}">
 
         <title>Primer Premio de la Afición</title>
 
@@ -68,6 +69,13 @@
                 opacity: 0;
             }
         </style>
+
+        <script>
+            window.Laravel = {!! json_encode([
+                'csrfToken' => csrf_token(),
+                'form' => $form,
+            ]) !!};
+        </script>
     </head>
     <body>
         <div class="flex-center position-ref full-height">
@@ -109,12 +117,12 @@
                         </p>
         
                         <p>
-                            <select class="js-players hidden" name="player" required></select>
+                            <select class="js-players {{ $form['player'] ? '' : 'hidden' }}" name="player" required></select>
                         </p>
         
-                        <p class="reason hidden">
+                        <p class="reason {{ $form['reason'] ? '' : 'hidden' }}">
                             <label for="reason">Cuéntanos porqué crees que se lo merece</label><br>
-                            <textarea name="reason" id="reason" cols="30" rows="10" placeholder="Por que..." required></textarea>
+                            <textarea name="reason" id="reason" cols="30" rows="10" placeholder="Por que..." required>{{ $form['reason'] }}</textarea>
                         </p>
 
                         <p class="submit hidden">
@@ -813,52 +821,101 @@
             };
             $(document).ready(function() {
                 var teams = Object.keys(players);
-                var id = 1;
                 teams = $.map(teams, function (obj) {
                     var team = {};
                     team.id = obj;
                     team.text = obj;
 
-                    ++id;
+                    if (obj === Laravel.form.team) {
+                        team['selected'] = true;
+                    }
 
                     return team;
                 });
-                teams.unshift({
-                    id: 0,
-                    text: '-- Elige equipo --',
-                    "selected": true,
-                    "disabled": true
-                });
+                if (!Laravel.form.team) {
+                    teams.unshift({
+                        id: 0,
+                        text: '-- Elige equipo --',
+                        "selected": true,
+                        "disabled": true
+                    });
+                } else {
+                    teamSelected(Laravel.form.team);
+                }
                 $('.js-teams').select2({
                     data: teams,
                     width: '100%'
                 });
                 $('.js-teams').on('select2:select', function (e) {
-                    $('.js-players').removeClass('hidden');
-                    var team = e.params.data.text;
-                    var teamPlayers = players[team];
+                    teamSelected(e.params.data.text);
+                });
+                $('.js-players').on('select2:select', function (e) {
+                    $('.reason, .submit').removeClass('hidden');
+                    var formdata = new FormData(form);
+                    formdata.append( "_token", Laravel.csrfToken);
+                    formdata.append('key', 'player');
+                    formdata.append('value', e.params.data.text);
+                    fetch('/auth/save-session', { method: 'POST', body: formdata, headers: {
+                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                    }})
+                    .catch(error => console.error('Error!', error.message))
+                });
+                $('#reason').bind('input propertychange', function() {
+                    var formdata = new FormData(form);
+                    formdata.append( "_token", Laravel.csrfToken);
+                    formdata.append('key', 'reason');
+                    formdata.append('value', this.value);
+                    fetch('/auth/save-session', { method: 'POST', body: formdata})
+                    .catch(error => console.error('Error!', error.message))
+                });
+            });
+
+            var teamSelected = function (team) {
+                showPlayers(team);
+                var formdata = new FormData(form);
+                formdata.append( "_token", Laravel.csrfToken);
+                formdata.append('key', 'team');
+                formdata.append('value', team);
+                fetch('/auth/save-session', { method: 'POST', body: formdata})
+                .catch(error => console.error('Error!', error.message))
+            }
+
+            var showPlayers = function (team) {
+                $('.js-players').removeClass('hidden');
+                var teamPlayers = players[team];
+                teamPlayers = $.map(teamPlayers, function (obj) {
+                    var players = {};
+                    players.id = obj;
+                    players.text = obj;
+
+                    if (obj === Laravel.form.player) {
+                        players['selected'] = true;
+                    }
+
+                    return players;
+                });
+                if (!Laravel.form.team) {
                     teamPlayers.unshift({
                         id: 0,
                         text: '-- Elige jugador --',
                         "selected": true,
                         "disabled": true
                     });
-                    $('.js-players').select2({
-                        data: teamPlayers,
-                        width: '100%'
-                    });
+                }
+                $('.js-players').select2({
+                    data: teamPlayers,
+                    width: '100%'
                 });
-                $('.js-players').on('select2:select', function (e) {
-                    $('.reason, .submit').removeClass('hidden');
-                });
-            });
+            }
 
             const scriptURL = 'https://script.google.com/macros/s/AKfycbyvkc-4kt9zpwbXvXNU9c6mBR7vXTvAZtUAze65Rdeiz4DU8ZHU/exec';
             const form = document.forms['premio'];
 
             form.addEventListener('submit', e => {
+                var formdata = new FormData(form);
+
                 e.preventDefault()
-                fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+                fetch(scriptURL, { method: 'POST', body: formdata})
                 .then(response => {
                     $('#form').addClass('hidden');
                     $('#thanks').removeClass('hidden');
