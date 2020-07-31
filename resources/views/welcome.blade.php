@@ -97,42 +97,40 @@
                 <div class="title m-b-md">
                     Primer Premio de la Afición
                 </div>
-
-                @if (!$is_logged)
+                
+                <form name="premio" id="form">
+                    <input type="hidden" name="nil" value="{{ $user['nil'] }}">
+                    <input type="hidden" name="email" value="{{ $user['email'] }}">
+                    <input type="hidden" name="name" value="{{ $user['name'] }}">
+                    <input type="hidden" name="last_name" value="{{ $user['last_name'] }}">
+                    <input type="hidden" name="last_name2" value="{{ $user['last_name2'] }}">
+                    <input type="hidden" name="zip" value="{{ $user['zip'] }}">
+    
                     <p>
-                        <a href="https://seguro.marca.com/registro/v2/?url_redirect=https%3A%2F%2Fseguro.marca.com%2Fueregistro%2Fv1%2Foauth%2Fservidor%2Fsolicitud-autorizacion%3Fresponse_type%3Dcode%26client_id%3D{{ env('OAUTH_CLIENT_ID') }}%26redirect_uri%3D{{ urlencode(env('APP_URL')) }}%2Flogin&csp={{ env('OAUTH_CLIENT_ID') }}">Autentificación</a>
-                        <span class="hidden">{{ env('APP_URL') }}</span>
+                        <select class="js-teams" name="team" required></select>
                     </p>
-                @else
-                    <form name="premio" id="form">
-                        <input type="hidden" name="nil" value="{{ $user['nil'] }}">
-                        <input type="hidden" name="email" value="{{ $user['email'] }}">
-                        <input type="hidden" name="name" value="{{ $user['name'] }}">
-                        <input type="hidden" name="last_name" value="{{ $user['last_name'] }}">
-                        <input type="hidden" name="last_name2" value="{{ $user['last_name2'] }}">
-                        <input type="hidden" name="zip" value="{{ $user['zip'] }}">
-        
-                        <p>
-                            <select class="js-teams" name="team" required></select>
-                        </p>
-        
-                        <p>
-                            <select class="js-players {{ $form['player'] ? '' : 'hidden' }}" name="player" required></select>
-                        </p>
-        
-                        <p class="reason {{ $form['reason'] ? '' : 'hidden' }}">
-                            <label for="reason">Cuéntanos porqué crees que se lo merece</label><br>
-                            <textarea name="reason" id="reason" cols="30" rows="10" placeholder="Por que..." required>{{ $form['reason'] }}</textarea>
-                        </p>
+    
+                    <p>
+                        <select class="js-players {{ $form['player'] ? '' : 'hidden' }}" name="player" required></select>
+                    </p>
+    
+                    <p class="reason {{ $form['reason'] ? '' : 'hidden' }}">
+                        <label for="reason">Cuéntanos porqué crees que se lo merece</label><br>
+                        <textarea name="reason" id="reason" cols="30" rows="10" placeholder="Por que..." required>{{ $form['reason'] }}</textarea>
+                    </p>
 
-                        <p class="submit hidden">
+                    <p class="submit hidden">
+                        @if (!$is_logged)
+                            <a href="https://seguro.marca.com/registro/v2/?url_redirect=https%3A%2F%2Fseguro.marca.com%2Fueregistro%2Fv1%2Foauth%2Fservidor%2Fsolicitud-autorizacion%3Fresponse_type%3Dcode%26client_id%3D{{ env('OAUTH_CLIENT_ID') }}%26redirect_uri%3D{{ urlencode(env('APP_URL')) }}%2Flogin&csp={{ env('OAUTH_CLIENT_ID') }}">VOTAR</a>
+                        @else
                             <button type="submit">VOTAR</button>
-                        </p>
-                    </form>
-                    <div id="thanks" class="hidden">
-                        Gracias
-                    </div>
-                @endif
+                        @endif
+                    </p>
+                </form>
+                <div id="thanks" class="hidden">
+                    Gracias
+                </div>
+                
             </div>
         </div>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> 
