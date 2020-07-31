@@ -125,6 +125,10 @@
                         @else
                             <button type="submit">VOTAR</button>
                         @endif
+                        <br>
+                        <small>
+                            Para poder votar es necesario estar <u>registrado</u> en <a href="https://marca.com" target="_blank">MARCA.COM</a>
+                        </small>
                     </p>
                 </form>
                 <div id="thanks" class="hidden">
