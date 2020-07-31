@@ -76,6 +76,8 @@
                 'form' => $form,
             ]) !!};
         </script>
+
+        <script src="//e00-apps-ue.uecdn.es/tms/js/tms-branded.js"></script>
     </head>
     <body>
         <div class="flex-center position-ref full-height">
@@ -140,6 +142,8 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> 
         <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/js/select2.min.js"></script>
         <script>
+            TMSBottom();
+            
             var players = {
                 'Alavés': [
                     'John Guidetti',
