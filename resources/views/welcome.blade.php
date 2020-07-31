@@ -119,7 +119,7 @@
                         <textarea name="reason" id="reason" cols="30" rows="10" placeholder="Por que..." required>{{ $form['reason'] }}</textarea>
                     </p>
 
-                    <p class="submit hidden">
+                    <p class="submit">
                         @if (!$is_logged)
                             <a href="https://seguro.marca.com/registro/v2/?url_redirect=https%3A%2F%2Fseguro.marca.com%2Fueregistro%2Fv1%2Foauth%2Fservidor%2Fsolicitud-autorizacion%3Fresponse_type%3Dcode%26client_id%3D{{ env('OAUTH_CLIENT_ID') }}%26redirect_uri%3D{{ urlencode(env('APP_URL')) }}%2Flogin&csp={{ env('OAUTH_CLIENT_ID') }}">VOTAR</a>
                         @else
@@ -866,6 +866,9 @@
                     fetch('/auth/save-session', { method: 'POST', body: formdata})
                     .catch(error => console.error('Error!', error.message))
                 });
+                if ($('.reason').hasClass('hidden')) {
+                    $('.submit').addClass('hidden');
+                }
             });
 
             var teamSelected = function (team) {
