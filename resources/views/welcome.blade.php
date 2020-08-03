@@ -1284,12 +1284,12 @@
         });
 
         function isIE11() {
-                if (!!window.MSInputMethodContext && !!document.documentMode) {
-                    $('#claim').addClass('d-none');
-                    $('#form').addClass('d-none');
-                    $('#ie11').removeClass('d-none');
-                }
+            if (!!window.MSInputMethodContext && !!document.documentMode) {
+                $('#claim').addClass('d-none');
+                $('#form').addClass('d-none');
+                $('#ie11').removeClass('d-none');
             }
+        }
     </script>
 </body>
 
