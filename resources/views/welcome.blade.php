@@ -128,24 +128,6 @@
             height: auto;
         }
 
-        section#ie11,
-        section#thanks,
-        section#thanks.hide,
-        section.hide,
-        .ie11 section {
-            visibility: hidden;
-            opacity: 0;
-            height: 0;
-        }
-
-        section#thanks.show,
-        section.show,
-        .ie11 section#ie11 {
-            visibility: visible;
-            opacity: 1;
-            height: auto;
-        }
-
         #thanks {
             margin-bottom: 40px;
         }
@@ -400,7 +382,7 @@
     </header>
 
     <main class="container">
-        <section id="ie11">
+        <section id="ie11" class="d-none">
             <div class="row">
                 <div class="col-md-10 offset-md-1 col-lg-8 offset-lg-2">
                     <h2>Navegador no Soportado</h2>
@@ -473,7 +455,7 @@
                 </div>
             </div>
         </section>
-        <section id="thanks">
+        <section id="thanks" class="d-none">
             <div class="row">
                 <div class="col-md-10 offset-md-1 col-lg-8 offset-lg-2 text-center">
                     <h2>¡Gracias!</h2>
@@ -1284,12 +1266,14 @@
 
             form.addEventListener('submit', e => {
                 var formdata = new FormData(form);
+                $('#sendButton').addClass('loading');
 
                 e.preventDefault()
                 fetch(scriptURL, { method: 'POST', body: formdata})
                 .then(response => {
                     $('#form').addClass('d-none');
                     $('#thanks').removeClass('d-none');
+                    $('#sendButton').removeClass('loading');
                 })
                 .catch(error => console.error('Error!', error.message))
             })
