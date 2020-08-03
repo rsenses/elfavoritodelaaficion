@@ -1285,7 +1285,8 @@
 
         function isIE11() {
                 if (!!window.MSInputMethodContext && !!document.documentMode) {
-                    $('main').addClass('d-none');
+                    $('#claim').addClass('d-none');
+                    $('#form').addClass('d-none');
                     $('#ie11').removeClass('d-none');
                 }
             }
