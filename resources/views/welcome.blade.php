@@ -1285,9 +1285,8 @@
 
         function isIE11() {
                 if (!!window.MSInputMethodContext && !!document.documentMode) {
-                    document.body.classList.add('ie11');
-                } else {
-                    document.body.classList.add('noie11');
+                    $('main').addClass('d-none');
+                    $('#ie11').removeClass('d-none');
                 }
             }
     </script>
