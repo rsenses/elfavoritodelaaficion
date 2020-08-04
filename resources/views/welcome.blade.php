@@ -120,6 +120,26 @@
             transform: scale(0.9);
         }
 
+        .share a {
+            background-color: #fff;
+            color: #e00109;
+            margin: 0 10px;
+        }
+
+        .share a.facebook {
+            border-radius: 50px;
+            padding: 0.5em 0.8em;
+        }
+
+        .share a.twitter {
+            border-radius: 50px;
+            padding: 0.5em 0.6em;
+        }
+
+        .share a:hover {
+            transform: scale(1.5);
+        }
+
         main {
             padding: 30px 0 80px;
             position: relative;
@@ -164,8 +184,7 @@
         }
 
         h2 {
-            text-align: center;
-            margin-bottom: 30px;
+            font-size: 25px;
         }
 
         .custom-select {
@@ -410,7 +429,7 @@
                     </div>
                 </div>
             </div>
-            <a href="#claim" class="cta btn btn-light">PARTICIPA</a>
+            <a href="#form" class="cta btn btn-light">PARTICIPA</a>
         </div>
     </header>
 
@@ -423,22 +442,10 @@
                 </div>
             </div>
         </section>
-        <section id="claim">
-            {{-- <div class="row d-sm-block d-md-none">
-                <div class="col social text-center">
-                    <a href="#claim" target="_blank" rel="nofollow noopener"><img src="assets/images/icon-twitter.png" alt="Twitter" /></a>
-                    <a href="#claim" target="_blank" rel="nofollow noopener"><img src="assets/images/icon-ig.png" alt="Instagram" /></a>
-                </div>
-            </div> --}}
-            <div class="row">
-                <div class="col-md-12 col-lg-6 offset-lg-3 col-xl-4 offset-xl-4">
-                    <p>¡VAMOS A POR ELLO!</p>
-                </div>
-            </div>
-        </section>
         <section id="form">
             <div class="row">
                 <div class="col-md-12 col-lg-6 offset-lg-3 col-xl-4 offset-xl-4">
+                    <h2>¡VAMOS A POR ELLO!</h2>
                     <form name="premio" id="form">
                         <input type="hidden" name="nil" value="{{ $user['nil'] }}">
                         <input type="hidden" name="email" value="{{ $user['email'] }}">
@@ -491,9 +498,12 @@
         <section id="thanks" class="d-none">
             <div class="row">
                 <div class="col-md-10 offset-md-1 col-lg-8 offset-lg-2 text-center">
-                    <h2>¡Gracias!</h2>
-                    <p class="text-center">TU REGISTRO SE HA COMPLETADO CON ÉXITO<br />AHORA YA PUEDES PARTICIPAR</p>
-                    <a href="https://discord.gg/6UAfQMs" class="btn btn-success" target="_blank" rel="nofollow noopener">COMIENZA AQUÍ</a>
+                    <h2 class="text-center">¡GRACIAS POR PARTICIPAR!</h2>
+                    <p class="text-center">Comparte la votación en tus RRSS y consigue más<br>opciones de ganar el premio.</p>
+                    <p class="text-center share">
+                        <a href="#0" target="_blank" rel="nofollow" onclick="gtag('event', 'Social', {'event_category': 'Facebook'});envioEventoRedSocial('facebook');" title="Compártelo en Facebook" itemprop="sameAs" class="facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#0" target="_blank" rel="nofollow" onclick="gtag('event', 'Social', {'event_category': 'Twitter'});envioEventoRedSocial('twitter');" title="Compártelo en Twitter" itemprop="sameAs" class="twitter"><i class="fab fa-twitter"></i></a>
+                    </p>
                 </div>
             </div>
         </section>
@@ -523,7 +533,7 @@
     <script>
         TMSBottom();
             
-        var players = {
+        const players = {
             'Alavés': [
                 'John Guidetti',
                 'Aleix Vidal',
@@ -1204,18 +1214,22 @@
                 'Ramiro Guerra',
             ]
         };
+
+        var team = null;
+        var player = null;
+
         $(document).ready(function() {
             var teams = Object.keys(players);
             teams = $.map(teams, function (obj) {
-                var team = {};
-                team.id = obj;
-                team.text = obj;
+                var addTeam = {};
+                addTeam.id = obj;
+                addTeam.text = obj;
 
-                if (obj === Laravel.form.team) {
-                    team['selected'] = true;
+                if (obj === Laravel.form.addTeam) {
+                    addTeam['selected'] = true;
                 }
 
-                return team;
+                return addTeam;
             });
             if (!Laravel.form.team) {
                 teams.unshift({
@@ -1232,15 +1246,16 @@
                 width: '100%'
             });
             $('.js-teams').on('select2:select', function (e) {
-                console.log(e.params.data.text);
-                teamSelected(e.params.data.text);
+                team = e.params.data.text;
+                teamSelected(team);
             });
             $('.js-players').on('select2:select', function (e) {
+                player = e.params.data.text
                 $('.reason, .submit').removeClass('d-none');
                 var formdata = new FormData(form);
                 formdata.append( "_token", Laravel.csrfToken);
                 formdata.append('key', 'player');
-                formdata.append('value', e.params.data.text);
+                formdata.append('value', player);
                 fetch('/auth/save-session', { method: 'POST', body: formdata, headers: {
                     'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                 }})
@@ -1272,18 +1287,20 @@
 
         var showPlayers = function (team) {
             $('.js-players').removeClass('d-none');
-            console.log(players);
             var teamPlayers = players[team];
+            console.log(players);
+            console.log(team);
+            console.log(teamPlayers);
             teamPlayers = $.map(teamPlayers, function (obj) {
-                var player = {};
-                player.id = obj;
-                player.text = obj;
+                var addPlayer = {};
+                addPlayer.id = obj;
+                addPlayer.text = obj;
 
-                if (obj === Laravel.form.player) {
-                    player['selected'] = true;
+                if (obj === Laravel.form.addPlayer) {
+                    addPlayer['selected'] = true;
                 }
 
-                return player;
+                return addPlayer;
             });
             if (!Laravel.form.team) {
                 teamPlayers.unshift({
@@ -1309,9 +1326,12 @@
             e.preventDefault()
             fetch(scriptURL, { method: 'POST', body: formdata})
             .then(response => {
+                $('#claim').addClass('d-none');
                 $('#form').addClass('d-none');
                 $('#thanks').removeClass('d-none');
                 $('#sendButton').removeClass('loading');
+                $('.share a.facebook').attr('href', 'https://www.facebook.com/dialog/share?app_id=1067563583641276&href=https://elfavoritodelaaficion.marca.com/?cid=SMBOSO22801&s_kw=BC-facebook&quote='+player+'&redirect_uri=https://elfavoritodelaaficion.marca.com/?cid=SMBOSO22801&s_kw=BC-facebook');
+                $('.share a.twitter').attr('href', 'https://twitter.com/intent/tweet?url=https://elfavoritodelaaficion.marca.com/?cid=SMBOSO22801&s_kw=BC-twitter&amp;text='+player+'&amp;wrap_links=true');
             })
             .catch(error => console.error('Error!', error.message))
         });
