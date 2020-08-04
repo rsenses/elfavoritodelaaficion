@@ -470,9 +470,9 @@
                         </div>
 
                         <p class="submit text-center {{ $form['player'] && $form['team'] ? '' : 'd-none' }}">
-                            @if (!$is_logged)
+                            {{-- @if (!$is_logged)
                                 <a class="btn btn-light" href="https://seguro.marca.com/registro/v2/?url_redirect=https%3A%2F%2Fseguro.marca.com%2Fueregistro%2Fv1%2Foauth%2Fservidor%2Fsolicitud-autorizacion%3Fresponse_type%3Dcode%26client_id%3D{{ env('OAUTH_CLIENT_ID') }}%26redirect_uri%3D{{ urlencode(env('APP_URL')) }}%2Flogin&csp={{ env('OAUTH_CLIENT_ID') }}">VOTAR</a>
-                            @else
+                            @else --}}
                                 <button class="btn btn-light" id="sendButton" type="submit" id="sendButton">
                                     <div class="quiet">
                                         VOTAR
@@ -482,7 +482,7 @@
                                         VOTANDO...
                                     </div>
                                 </button>
-                            @endif
+                            {{-- @endif --}}
                             <br>
                             <small>
                                 Para poder votar es necesario estar <u>registrado</u> en <a href="https://marca.com" target="_blank" class="text-white">MARCA.COM</a>
@@ -1215,9 +1215,6 @@
             ]
         };
 
-        var team = null;
-        var player = null;
-
         $(document).ready(function() {
             var teams = Object.keys(players);
             teams = $.map(teams, function (obj) {
@@ -1246,16 +1243,14 @@
                 width: '100%'
             });
             $('.js-teams').on('select2:select', function (e) {
-                team = e.params.data.text;
-                teamSelected(team);
+                teamSelected(e.params.data.text);
             });
             $('.js-players').on('select2:select', function (e) {
-                player = e.params.data.text
                 $('.reason, .submit').removeClass('d-none');
                 var formdata = new FormData(form);
                 formdata.append( "_token", Laravel.csrfToken);
                 formdata.append('key', 'player');
-                formdata.append('value', player);
+                formdata.append('value', e.params.data.text);
                 fetch('/auth/save-session', { method: 'POST', body: formdata, headers: {
                     'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                 }})
@@ -1275,7 +1270,6 @@
         });
 
         var teamSelected = function (team) {
-            console.log(team);
             showPlayers(team);
             var formdata = new FormData(form);
             formdata.append( "_token", Laravel.csrfToken);
@@ -1288,9 +1282,6 @@
         var showPlayers = function (team) {
             $('.js-players').removeClass('d-none');
             var teamPlayers = players[team];
-            console.log(players);
-            console.log(team);
-            console.log(teamPlayers);
             teamPlayers = $.map(teamPlayers, function (obj) {
                 var addPlayer = {};
                 addPlayer.id = obj;
@@ -1330,8 +1321,8 @@
                 $('#form').addClass('d-none');
                 $('#thanks').removeClass('d-none');
                 $('#sendButton').removeClass('loading');
-                $('.share a.facebook').attr('href', 'https://www.facebook.com/dialog/share?app_id=1067563583641276&href=https://elfavoritodelaaficion.marca.com/?cid=SMBOSO22801&s_kw=BC-facebook&quote='+player+'&redirect_uri=https://elfavoritodelaaficion.marca.com/?cid=SMBOSO22801&s_kw=BC-facebook');
-                $('.share a.twitter').attr('href', 'https://twitter.com/intent/tweet?url=https://elfavoritodelaaficion.marca.com/?cid=SMBOSO22801&s_kw=BC-twitter&amp;text='+player+'&amp;wrap_links=true');
+                $('.share a.facebook').attr('href', 'https://www.facebook.com/dialog/share?app_id=1067563583641276&href=https://elfavoritodelaaficion.marca.com/?cid=SMBOSO22801&s_kw=BC-facebook&quote='+$('#player').val()+'&redirect_uri=https://elfavoritodelaaficion.marca.com/?cid=SMBOSO22801&s_kw=BC-facebook');
+                $('.share a.twitter').attr('href', 'https://twitter.com/intent/tweet?url=https://elfavoritodelaaficion.marca.com/?cid=SMBOSO22801&s_kw=BC-twitter&amp;text='+$('#player').val()+'&amp;wrap_links=true');
             })
             .catch(error => console.error('Error!', error.message))
         });
