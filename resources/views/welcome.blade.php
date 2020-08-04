@@ -31,8 +31,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/css/select2.min.css" rel="stylesheet" />
+
+    <link href="https://use.fontawesome.com/releases/v5.14.0/css/all.css" rel="stylesheet" />
 
     <style>
         html,
@@ -84,6 +86,7 @@
 
         header .login {
             color: #fff;
+            margin-right: 20px;
         }
 
         nav {
@@ -239,7 +242,14 @@
             text-decoration: underline;
         }
 
+        .dropdown {
+            display: inline;
+        }
+
         @media (min-width: 960px) {
+            .dropdown {
+                display: block;
+            }
             main {
                 padding: 50px 0 80px;
             }
@@ -331,6 +341,11 @@
         .select2-container--default .select2-selection--single {
             border: 0 none;
         }
+
+        .dropdown-item {
+            display: inline;
+            padding: .25rem 1rem;
+        }
     </style>
 
     <script>
@@ -352,17 +367,33 @@
                 <div class="row">
                     <div class="col-lg-8 offset-lg-2">
                         <nav>
-                            <p class="text-center d-sm-block d-md-none">
+                            <div class="text-center d-sm-block d-md-none" style="margin-bottom: 15px">
                                 @if (!$is_logged)
                                     <a class="login" href="https://seguro.marca.com/registro/v2/?url_redirect=https%3A%2F%2Fseguro.marca.com%2Fueregistro%2Fv1%2Foauth%2Fservidor%2Fsolicitud-autorizacion%3Fresponse_type%3Dcode%26client_id%3D{{ env('OAUTH_CLIENT_ID') }}%26redirect_uri%3D{{ urlencode(env('APP_URL')) }}%2Flogin&csp={{ env('OAUTH_CLIENT_ID') }}">Login</a>
                                 @endif
-                            </p>
+                                <div class="dropdown">
+                                    <a href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="text-white"><i class="fas fa-bars"></i></a>
+                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                        <a class="dropdown-item" href="https://es-es.facebook.com/MARCA/" target="_blank"><i class="fab fa-facebook"></i></a>
+                                        <a class="dropdown-item" href="https://twitter.com/marca?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor" target="_blank"><i class="fab fa-twitter"></i></a>
+                                        <a class="dropdown-item" href="https://www.instagram.com/marca/?hl=en" target="_blank"><i class="fab fa-instagram"></i></a>
+                                    </div>
+                                </div>
+                            </div>
                             <a href="https://marca.com" target="_blank">
                                 <img src="assets/images/marca-white.png" alt="MARCA.COM">
                             </a>
                             <a href="https://hyundai.com" target="_blank" style="margin-left: 30px">
                                 <img src="assets/images/hyundai.png" alt="Hyundai">
                             </a>
+                            <div class="dropdown float-right d-none d-md-block">
+                                <a href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="text-white"><i class="fas fa-bars"></i></a>
+                                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                    <a class="dropdown-item" href="https://es-es.facebook.com/MARCA/" target="_blank"><i class="fab fa-facebook"></i></a>
+                                    <a class="dropdown-item" href="https://twitter.com/marca?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor" target="_blank"><i class="fab fa-twitter"></i></a>
+                                    <a class="dropdown-item" href="https://www.instagram.com/marca/?hl=en" target="_blank"><i class="fab fa-instagram"></i></a>
+                                </div>
+                            </div>
                             @if (!$is_logged)
                                 <a class="float-right login d-none d-md-block" href="https://seguro.marca.com/registro/v2/?url_redirect=https%3A%2F%2Fseguro.marca.com%2Fueregistro%2Fv1%2Foauth%2Fservidor%2Fsolicitud-autorizacion%3Fresponse_type%3Dcode%26client_id%3D{{ env('OAUTH_CLIENT_ID') }}%26redirect_uri%3D{{ urlencode(env('APP_URL')) }}%2Flogin&csp={{ env('OAUTH_CLIENT_ID') }}">Login</a>
                             @endif
@@ -481,16 +512,18 @@
                 <a href="https://marca.com" target="_blank" rel="noopener">
                     Nadie como tú para dar el mejor premio<br>
                     <img src="assets/images/marca.png" alt="Marca" /></a><br>
-                    <a href="assets/bases-fornite.pdf" target="_blank" rel="noopener" class="legal">Bases legales</a>
+                    <a href="assets/pdf/bases-legales.pdf" target="_blank" rel="noopener" class="legal">Bases legales</a>
             </p>
         </div>
     </footer>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/js/select2.min.js"></script>
     <script>
         TMSBottom();
             
-        const players = {
+        var players = {
             'Alavés': [
                 'John Guidetti',
                 'Aleix Vidal',
