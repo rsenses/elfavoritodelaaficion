@@ -466,7 +466,7 @@
 
                         <div class="form-group reason {{ $form['player'] && $form['team'] ? '' : 'd-none' }}">
                             <label for="reason">Cuéntanos porqué crees que se lo merece</label><br>
-                            <textarea name="reason" class="form-control" id="reason" placeholder="Máximo 140 caracteres" required>{{ $form['reason'] }}</textarea>
+                            <textarea name="reason" class="form-control" id="reason" placeholder="Máximo 140 caracteres" maxlength="140" required>{{ $form['reason'] }}</textarea>
                         </div>
 
                         <p class="submit text-center {{ $form['player'] && $form['team'] ? '' : 'd-none' }}">
