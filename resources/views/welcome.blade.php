@@ -9,6 +9,29 @@
 
     <title>Premio al Jugador FULL ELECTRIC, FULL POWER</title>
 
+    <meta name="description" content="MARCA y Hyundai buscan al JUGADOR FAVORITO DE LA AFICIÓN de la temporada 2019/20" />
+    <!-- Schema.org markup (Google) -->
+    <meta itemprop="name" content="Premio al Jugador Full Electric, Full Power, MARCA y Hyundai" />
+    <meta itemprop="description" content="MARCA y Hyundai buscan al JUGADOR FAVORITO DE LA AFICIÓN de la temporada 2019/20" />
+    <meta itemprop="image" content="https://elfavoritodelaaficion.marca.com/assets/images/img-main.jpg" />
+    <!-- Twitter Card markup-->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@Marca" />
+    <meta name="twitter:title" content="Premio al Jugador Full Electric, Full Power, MARCA y Hyundai" />
+    <meta name="twitter:description" content="MARCA y Hyundai buscan al JUGADOR FAVORITO DE LA AFICIÓN de la temporada 2019/20" />
+    <meta name="twitter:creator" content="Marca" />
+    <!-- Twitter summary card with large image must be at least 280x150px -->
+    <meta name="twitter:image" content="https://elfavoritodelaaficion.marca.com/assets/images/img-main.jpg" />
+    <meta name="twitter:image:alt" content="MARCA y Hyundai buscan al JUGADOR FAVORITO DE LA AFICIÓN de la temporada 2019/20" />
+    <!-- Open Graph markup (Facebook, Pinterest) -->
+    <meta property="og:title" content="Premio al Jugador Full Electric, Full Power, MARCA y Hyundai" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://elfavoritodelaaficion.marca.com/" />
+    <meta property="og:image" content="https://elfavoritodelaaficion.marca.com/assets/images/img-main.jpg" />
+    <meta property="og:description" content="Lo último en implantes para una sonrisa perfecta. Todo lo que debes saber para lucir una boca perfecta con la mayor seguridad y los mejores profesionales." />
+
+    <meta property="og:site_name" content="El Favorito de la Afición" />
+
     <link rel="apple-touch-icon" sizes="57x57" href="assets/images/apple-icon-57x57.png" />
     <link rel="apple-touch-icon" sizes="60x60" href="assets/images/apple-icon-60x60.png" />
     <link rel="apple-touch-icon" sizes="72x72" href="assets/images/apple-icon-72x72.png" />
