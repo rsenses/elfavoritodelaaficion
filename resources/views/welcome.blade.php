@@ -448,7 +448,7 @@
                 <h1 class="text-center"><span>PREMIO AL JUGADOR</span><br><strong>FULL ELECTRIC, FULLPOWER</strong></h1>
                 <div class="row">
                     <div class="col-lg-8 offset-lg-2">
-                        <p class="text-center"><strong>MARCA</strong> y <strong>Hyundai</strong> buscan al <strong>JUGADOR FAVORITO DE LA AFICIÓN</strong> de la temporada 2019/20. Vota por el jugador que crees que más se identifica con los valores de Hyundai en el terreno de juego: Potencia, reflejos, destreza, precisión y, por supuesto, Juego limpio. Podrás  acudir a la <strong>Gala de los Premios MARCA</strong>pañante.</p>
+                        <p class="text-center"><strong>MARCA</strong> y <strong>Hyundai</strong> buscan al <strong>JUGADOR FAVORITO DE LA AFICIÓN</strong> de la temporada 2019/20. Vota por el jugador que crees que más se identifica con los valores de Hyundai en el terreno de juego: Potencia, reflejos, destreza, precisión y, por supuesto, Juego limpio. Podrás  acudir a la <strong>Gala de los Premios MARCA</strong> con un acompañante.</p>
                     </div>
                 </div>
             </div>
@@ -534,7 +534,7 @@
 
     <footer>
         <div class="container">
-            <a href="https://www.hyundai.com" target="_blank" class="car"><img src="assets/images/car.png" alt="HYUNDAI TUCSON N Line" /></a>
+            <a href="https://www.hyundai.com/es/modelos/tucson.html" target="_blank" class="car"><img src="assets/images/car.png" alt="HYUNDAI TUCSON N Line" /></a>
             <p class="car-text float-left">
                 <u>Descubre el NUEVO</u><br>
                 <span>HYUNDAI TUCSON N Line</span><br>
