@@ -493,9 +493,9 @@
                         </div>
 
                         <p class="submit text-center {{ $form['player'] && $form['team'] ? '' : 'd-none' }}">
-                            {{-- @if (!$is_logged)
+                            @if (!$is_logged)
                                 <a class="btn btn-light" href="https://seguro.marca.com/registro/v2/?url_redirect=https%3A%2F%2Fseguro.marca.com%2Fueregistro%2Fv1%2Foauth%2Fservidor%2Fsolicitud-autorizacion%3Fresponse_type%3Dcode%26client_id%3D{{ env('OAUTH_CLIENT_ID') }}%26redirect_uri%3D{{ urlencode(env('APP_URL')) }}%2Flogin&csp={{ env('OAUTH_CLIENT_ID') }}">VOTAR</a>
-                            @else --}}
+                            @else
                                 <button class="btn btn-light" id="sendButton" type="submit" id="sendButton">
                                     <div class="quiet">
                                         VOTAR
@@ -505,7 +505,7 @@
                                         VOTANDO...
                                     </div>
                                 </button>
-                            {{-- @endif --}}
+                            @endif
                             <br>
                             <small>
                                 Para poder votar es necesario estar <u>registrado</u> en <a href="https://marca.com" target="_blank" class="text-white">MARCA.COM</a>
