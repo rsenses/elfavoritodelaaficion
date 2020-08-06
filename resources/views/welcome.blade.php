@@ -556,7 +556,7 @@
     <script>
         TMSBottom();
             
-        const players = {
+        const data = {
             'Alavés': [
                 'John Guidetti',
                 'Aleix Vidal',
@@ -695,7 +695,6 @@
                 'Álex Collado',
             ],
             'Celta de Vigo': [
-                'Player Name',
                 'Okay Yokuslu',
                 'Fran Beltrán',
                 'Juan Hernández',
@@ -1239,13 +1238,13 @@
         };
 
         $(document).ready(function() {
-            var teams = Object.keys(players);
+            var teams = Object.keys(data);
             teams = $.map(teams, function (obj) {
                 var addTeam = {};
                 addTeam.id = obj;
                 addTeam.text = obj;
 
-                if (obj === Laravel.form.addTeam) {
+                if (obj === Laravel.form.team) {
                     addTeam['selected'] = true;
                 }
 
@@ -1262,6 +1261,8 @@
                 teamSelected(Laravel.form.team);
             }
             $('.js-teams').select2({
+                placeholder: "Selecciona equipo",
+                allowClear: true,
                 data: teams,
                 width: '100%'
             });
@@ -1293,6 +1294,14 @@
         });
 
         var teamSelected = function (team) {
+            $(".js-players").empty();
+            $(".js-players").select2({
+                placeholder: "Selecciona jugador",
+                allowClear: true,
+                data: null,
+                width: '100%'
+            }); // clear out values selected
+            $('.js-players').val(null).trigger('change');
             showPlayers(team);
             var formdata = new FormData(form);
             formdata.append( "_token", Laravel.csrfToken);
@@ -1304,13 +1313,13 @@
 
         var showPlayers = function (team) {
             $('.js-players').removeClass('d-none');
-            var teamPlayers = players[team];
+            var teamPlayers = data[team];
             teamPlayers = $.map(teamPlayers, function (obj) {
                 var addPlayer = {};
                 addPlayer.id = obj;
                 addPlayer.text = obj;
 
-                if (obj === Laravel.form.addPlayer) {
+                if (obj === Laravel.form.player) {
                     addPlayer['selected'] = true;
                 }
 
@@ -1325,6 +1334,8 @@
                 });
             }
             $('.js-players').select2({
+                placeholder: "Selecciona jugador",
+                allowClear: true,
                 data: teamPlayers,
                 width: '100%'
             });
