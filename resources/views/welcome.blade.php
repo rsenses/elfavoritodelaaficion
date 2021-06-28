@@ -9,20 +9,20 @@
 
     <title>Premio al Jugador FULL ELECTRIC, FULL POWER</title>
 
-    <meta name="description" content="MARCA y Hyundai buscan al JUGADOR FAVORITO DE LA AFICIÓN de la temporada 2019/20" />
+    <meta name="description" content="MARCA y Hyundai buscan al JUGADOR FAVORITO DE LA AFICIÓN de la temporada 2020/21" />
     <!-- Schema.org markup (Google) -->
     <meta itemprop="name" content="Premio al Jugador Full Electric, Full Power, MARCA y Hyundai" />
-    <meta itemprop="description" content="MARCA y Hyundai buscan al JUGADOR FAVORITO DE LA AFICIÓN de la temporada 2019/20" />
+    <meta itemprop="description" content="MARCA y Hyundai buscan al JUGADOR FAVORITO DE LA AFICIÓN de la temporada 2020/21" />
     <meta itemprop="image" content="https://elfavoritodelaaficion.marca.com/assets/images/img-main.jpg" />
     <!-- Twitter Card markup-->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site" content="@Marca" />
     <meta name="twitter:title" content="Premio al Jugador Full Electric, Full Power, MARCA y Hyundai" />
-    <meta name="twitter:description" content="MARCA y Hyundai buscan al JUGADOR FAVORITO DE LA AFICIÓN de la temporada 2019/20" />
+    <meta name="twitter:description" content="MARCA y Hyundai buscan al JUGADOR FAVORITO DE LA AFICIÓN de la temporada 2020/21" />
     <meta name="twitter:creator" content="Marca" />
     <!-- Twitter summary card with large image must be at least 280x150px -->
     <meta name="twitter:image" content="https://elfavoritodelaaficion.marca.com/assets/images/img-main.jpg" />
-    <meta name="twitter:image:alt" content="MARCA y Hyundai buscan al JUGADOR FAVORITO DE LA AFICIÓN de la temporada 2019/20" />
+    <meta name="twitter:image:alt" content="MARCA y Hyundai buscan al JUGADOR FAVORITO DE LA AFICIÓN de la temporada 2020/21" />
     <!-- Open Graph markup (Facebook, Pinterest) -->
     <meta property="og:title" content="Premio al Jugador Full Electric, Full Power, MARCA y Hyundai" />
     <meta property="og:type" content="article" />
@@ -448,7 +448,7 @@
                 <h1 class="text-center"><span>PREMIO AL JUGADOR</span><br><strong>FULL ELECTRIC, FULLPOWER</strong></h1>
                 <div class="row">
                     <div class="col-lg-8 offset-lg-2">
-                        <p class="text-center"><strong>MARCA</strong> y <strong>Hyundai</strong> buscan al <strong>JUGADOR FAVORITO DE LA AFICIÓN</strong> de la temporada 2019/20. Vota por el jugador que crees que más se identifica con los valores de Hyundai en el terreno de juego: Potencia, reflejos, destreza, precisión y, por supuesto, Juego limpio. Podrás  acudir a la <strong>Gala de los Premios MARCA</strong> con un acompañante.</p>
+                        <p class="text-center"><strong>MARCA</strong> y <strong>Hyundai</strong> buscan al <strong>JUGADOR FAVORITO DE LA AFICIÓN</strong> de la temporada 2020/21. Vota por el jugador que crees que más se identifica con los valores de Hyundai en el terreno de juego: Potencia, reflejos, destreza, precisión y, por supuesto, Juego limpio. Podrás  acudir a la <strong>Gala de los Premios MARCA</strong> con un acompañante.</p>
                     </div>
                 </div>
             </div>
