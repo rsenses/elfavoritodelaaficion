@@ -524,8 +524,8 @@
                     <h2 class="text-center">¡GRACIAS POR PARTICIPAR!</h2>
                     <p class="text-center">Comparte la votación en tus RRSS y consigue más<br>opciones de ganar el premio.</p>
                     <p class="text-center share">
-                        <a href="#0" target="_blank" rel="nofollow" onclick="gtag('event', 'Social', {'event_category': 'Facebook'});envioEventoRedSocial('facebook');" title="Compártelo en Facebook" itemprop="sameAs" class="facebook"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#0" target="_blank" rel="nofollow" onclick="gtag('event', 'Social', {'event_category': 'Twitter'});envioEventoRedSocial('twitter');" title="Compártelo en Twitter" itemprop="sameAs" class="twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#0" target="_blank" rel="nofollow" onclick="envioEventoRedSocial('facebook');" title="Compártelo en Facebook" itemprop="sameAs" class="facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#0" target="_blank" rel="nofollow" onclick="envioEventoRedSocial('twitter');" title="Compártelo en Twitter" itemprop="sameAs" class="twitter"><i class="fab fa-twitter"></i></a>
                     </p>
                 </div>
             </div>
