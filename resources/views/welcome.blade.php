@@ -392,15 +392,50 @@
 
     <script>
         window.Laravel = {!! json_encode([
-                'csrfToken' => csrf_token(),
-                'form' => $form,
-            ]) !!};
+            'csrfToken' => csrf_token(),
+            'form' => $form,
+        ]) !!};
     </script>
 
     <script src="//e00-apps-ue.uecdn.es/tms/js/tms-branded.js"></script>
+    <script src="https://tags.tiqcdn.com/utag/unidadeditorial/marca/prod/utag.sync.js"></script>
 </head>
 
 <body onload="isIE11()">
+    <script language="JavaScript" type="text/javascript" >
+        var ueDataLayer = ueDataLayer || {};
+        ueDataLayer.be_date_first_publication = "1450033370";
+        ueDataLayer.be_page_article_title = "premio al jugador full electric, full power";
+        ueDataLayer.be_page_section = "home";
+        ueDataLayer.be_page_subsection1 = "";
+        ueDataLayer.be_page_subsection2 = "";
+        ueDataLayer.be_page_subsection3 = "";
+        ueDataLayer.be_page_subsection4 = "";
+        ueDataLayer.be_page_subsection5 = "";
+        ueDataLayer.be_page_subsection6 = "";
+        ueDataLayer.be_page_url = "https://elfavoritodelaaficion.marca.com/";
+        ueDataLayer.be_page_url_qs = "https://elfavoritodelaaficion.marca.com/?param1=value1&param2...";
+        ueDataLayer.be_page_domain = "marca.com";
+        ueDataLayer.be_page_subdomain = "elfavoritodelaaficion";
+        ueDataLayer.be_page_hierarchy = "marca.com|elfavoritodelaaficion|home||||||";
+        ueDataLayer.be_text_seoTags = "";
+        ueDataLayer.be_page_site_version = "web";
+        ueDataLayer.be_page_content_type = "otros";
+        ueDataLayer.be_navigation_type = "origen";
+        ueDataLayer.be_content_premium_detail = "abierto";
+        ueDataLayer.be_content_premium = "0";
+        ueDataLayer.be_content_signwall_detail = "abierto";
+        ueDataLayer.be_content_signwall = "0";
+        ueDataLayer.marca_edition = "spain";
+    </script>
+    <script>var utag_data={}</script>
+    <script type="text/javascript">
+    (function(a,b,c,d){
+    a='https://tags.tiqcdn.com/utag/unidadeditorial/marca/prod/utag.js';
+    b=document;c='script';d=b.createElement(c);d.src=a;d.type='text/java'+c;d.async=true;
+    a=b.getElementsByTagName(c)[0];a.parentNode.insertBefore(d,a);
+    })();
+    </script>
     <header>
         <div class="container">
             <img src="assets/images/img-main.jpg" alt="El Favorito de la Afición" class="img-fluid d-none d-md-block" />
@@ -452,7 +487,7 @@
                     </div>
                 </div>
             </div>
-            <a href="#form" class="cta btn btn-light">PARTICIPA</a>
+            <a href="#form" class="cta btn btn-light" onclick="envioSC('elfavoritodelaaficion | participa')">PARTICIPA</a>
         </div>
     </header>
 
