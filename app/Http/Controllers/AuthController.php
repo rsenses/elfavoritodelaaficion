@@ -26,11 +26,22 @@ class AuthController extends Controller
 
             $token = $response->json();
 
-            var_dump($token);
-
-            $data = Http::dd('https://seguro.marca.com/ueregistro/v1/oauth/servidor/datos-usuario', [
+            $data = Http::get('https://seguro.marca.com/ueregistro/v1/oauth/servidor/datos-usuario', [
                 'oauth_token' => $token['access_token']
             ]);
+
+            $user = $data->json();
+
+            dd($user);
+
+            // $request->session()->put('user.nil', $user['NIL']);
+            // $request->session()->put('user.email', $user['E_MAIL']);
+            // $request->session()->put('user.name', $user['NOMBRE']);
+            // $request->session()->put('user.last_name', $user['APELLIDO1']);
+            // $request->session()->put('user.last_name2', $user['APELLIDO2']);
+            // $request->session()->put('user.zip', $user['COD_PROVINCIA']);
+
+            return redirect('/');
         }
     }
 
