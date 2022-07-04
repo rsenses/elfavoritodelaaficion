@@ -32,6 +32,8 @@ class AuthController extends Controller
 
             $user = $data->json();
 
+            dd($user);
+
             $request->session()->put('user.nil', $user['NIL']);
             $request->session()->put('user.email', $user['E_MAIL']);
             $request->session()->put('user.name', $user['NOMBRE']);
