@@ -936,7 +936,7 @@
 'Víctor Díaz',
 'Yan Eteki',
             ],
-            'Levante'; [
+            'Levante': [
                 'Aitor Fernández',
 'Bardhi',
 'Campaña',
