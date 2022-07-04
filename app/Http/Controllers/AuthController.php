@@ -26,6 +26,8 @@ class AuthController extends Controller
 
             $token = $response->json();
 
+            dd($token);
+
             $data = Http::get('https://seguro.marca.com/ueregistro/v1/oauth/servidor/datos-usuario', [
                 'oauth_token' => $token['access_token']
             ]);
