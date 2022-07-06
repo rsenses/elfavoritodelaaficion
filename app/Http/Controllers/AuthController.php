@@ -30,6 +30,8 @@ class AuthController extends Controller
                 'oauth_token' => $token['access_token']
             ]);
 
+            $data->throw();
+
             $user = $data->json();
 
             $request->session()->put('user.nil', $user['NIL']);
