@@ -41,7 +41,7 @@ class AuthController extends Controller
             $request->session()->put('user.last_name2', $user['APELLIDO2']);
             $request->session()->put('user.zip', $user['COD_POSTAL']);
 
-            return redirect('/');
+            return redirect(route('home'));
         }
     }
 
