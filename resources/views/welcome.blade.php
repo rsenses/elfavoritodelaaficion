@@ -421,7 +421,7 @@
         ueDataLayer.be_page_url_qs = document.location.href;
         ueDataLayer.be_page_domain = "marca.com";
         ueDataLayer.be_page_subdomain = "elfavoritodelaaficion";
-        ueDataLayer.be_page_hierarchy = " marca.com| elfavoritodelaaficion|home||||||";
+        ueDataLayer.be_page_hierarchy = "marca.com| elfavoritodelaaficion|home||||||";
         ueDataLayer.be_text_seoTags = "";
         ueDataLayer.be_page_site_version = "web";
         ueDataLayer.be_page_content_type = "otros";
