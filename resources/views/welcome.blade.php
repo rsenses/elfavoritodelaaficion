@@ -577,7 +577,7 @@
         <div class="container">
             <a href="https://www.hyundai.com/es/modelos/kona.html" target="_blank" class="car"><img src="/assets/images/car.png?v2" alt="HYUNDAI BAYON" /></a>
             <p class="car-text float-left">
-                <u>Descubre el NUEVO</u><br>
+                <u>Descubre el</u><br>
                 <span>HYUNDAI KONA</span><br>
                 Cargado de dinamismo e impulsado<br>por la emoción.
             </p>
