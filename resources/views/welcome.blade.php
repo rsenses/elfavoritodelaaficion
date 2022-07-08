@@ -408,8 +408,8 @@
 <body onload="isIE11()">
     <script language="JavaScript" type="text/javascript">
         var ueDataLayer = ueDataLayer || {};
-        ueDataLayer.be_date_first_publication = "1450033370";
-        ueDataLayer.be_page_article_title = "premio al jugador full electric, full power";
+        ueDataLayer.be_date_first_publication = new Date().getTime();
+        ueDataLayer.be_page_article_title = document.title;
         ueDataLayer.be_page_section = "home";
         ueDataLayer.be_page_subsection1 = "";
         ueDataLayer.be_page_subsection2 = "";
@@ -417,11 +417,11 @@
         ueDataLayer.be_page_subsection4 = "";
         ueDataLayer.be_page_subsection5 = "";
         ueDataLayer.be_page_subsection6 = "";
-        ueDataLayer.be_page_url = "https://elfavoritodelaaficion.marca.com/";
-        ueDataLayer.be_page_url_qs = "https://elfavoritodelaaficion.marca.com/?param1=value1&param2...";
+        ueDataLayer.be_page_url = document.location.href.split('?')[0];
+        ueDataLayer.be_page_url_qs = document.location.href;
         ueDataLayer.be_page_domain = "marca.com";
         ueDataLayer.be_page_subdomain = "elfavoritodelaaficion";
-        ueDataLayer.be_page_hierarchy = "marca.com|elfavoritodelaaficion|home||||||";
+        ueDataLayer.be_page_hierarchy = " marca.com| elfavoritodelaaficion|home||||||";
         ueDataLayer.be_text_seoTags = "";
         ueDataLayer.be_page_site_version = "web";
         ueDataLayer.be_page_content_type = "otros";
@@ -430,7 +430,6 @@
         ueDataLayer.be_content_premium = "0";
         ueDataLayer.be_content_signwall_detail = "abierto";
         ueDataLayer.be_content_signwall = "0";
-        ueDataLayer.marca_edition = "spain";
     </script>
     <script>
         var utag_data={}
