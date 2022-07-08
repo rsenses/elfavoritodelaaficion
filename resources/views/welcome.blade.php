@@ -586,7 +586,7 @@
                 <a href="https://marca.com" target="_blank" rel="noopener">
                     Nadie como tú para dar el mejor premio<br>
                     <img src="assets/images/marca.png" alt="Marca" /></a><br>
-                <a href="assets/pdf/bases-legales.pdf" target="_blank" rel="noopener" class="legal">Bases legales</a>
+                <a href="assets/pdf/bases-legales.pdf?v2" target="_blank" rel="noopener" class="legal">Bases legales</a>
             </p>
         </div>
     </footer>
