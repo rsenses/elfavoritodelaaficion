@@ -9,20 +9,20 @@
 
     <title>Premio al Jugador FULL ELECTRIC, FULL POWER</title>
 
-    <meta name="description" content="MARCA y Hyundai buscan al JUGADOR FAVORITO DE LA AFICIÓN de la temporada 2021/22" />
+    <meta name="description" content="MARCA y Hyundai buscan al JUGADOR FAVORITO DE LA AFICIÓN de la temporada 2022/23" />
     <!-- Schema.org markup (Google) -->
     <meta itemprop="name" content="Premio al Jugador Full Electric, Full Power, MARCA y Hyundai" />
-    <meta itemprop="description" content="MARCA y Hyundai buscan al JUGADOR FAVORITO DE LA AFICIÓN de la temporada 2021/22" />
+    <meta itemprop="description" content="MARCA y Hyundai buscan al JUGADOR FAVORITO DE LA AFICIÓN de la temporada 2022/23" />
     <meta itemprop="image" content="https://elfavoritodelaaficion.marca.com/assets/images/img-main.jpg" />
     <!-- Twitter Card markup-->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site" content="@Marca" />
     <meta name="twitter:title" content="Premio al Jugador Full Electric, Full Power, MARCA y Hyundai" />
-    <meta name="twitter:description" content="MARCA y Hyundai buscan al JUGADOR FAVORITO DE LA AFICIÓN de la temporada 2021/22" />
+    <meta name="twitter:description" content="MARCA y Hyundai buscan al JUGADOR FAVORITO DE LA AFICIÓN de la temporada 2022/23" />
     <meta name="twitter:creator" content="Marca" />
     <!-- Twitter summary card with large image must be at least 280x150px -->
     <meta name="twitter:image" content="https://elfavoritodelaaficion.marca.com/assets/images/img-main.jpg" />
-    <meta name="twitter:image:alt" content="MARCA y Hyundai buscan al JUGADOR FAVORITO DE LA AFICIÓN de la temporada 2021/22" />
+    <meta name="twitter:image:alt" content="MARCA y Hyundai buscan al JUGADOR FAVORITO DE LA AFICIÓN de la temporada 2022/23" />
     <!-- Open Graph markup (Facebook, Pinterest) -->
     <meta property="og:title" content="Premio al Jugador Full Electric, Full Power, MARCA y Hyundai" />
     <meta property="og:type" content="article" />
@@ -67,12 +67,12 @@
             font-family: 'Lato', 'helvetica neue', Arial, sans-serif;
             color: #fff;
             font-size: 17px;
-            background: #e00109;
+            background: #5a0846;
             overflow-x: hidden;
         }
 
         header {
-            background: #061939;
+            background: #fff;
         }
 
         header .container {
@@ -96,6 +96,7 @@
 
         header .cup {
             margin-top: 40px;
+            padding: 80px 0
         }
 
         header .content p {
@@ -112,11 +113,14 @@
         }
 
         nav {
-            margin-top: 15px;
+            margin-top: 0px;
+            padding: 10px 0;
         }
-
+        .icono {
+            margin-left: 30px;
+        }
         h1 {
-            color: #002b5e;
+            color: #fff;
             font-size: 23px;
             font-weight: 400;
             line-height: 50px;
@@ -124,7 +128,8 @@
 
         h1 span,
         h1 strong {
-            background-color: #fff;
+            background-color: #5a0846;
+            padding: 0 20px;
         }
 
         .social {
@@ -289,6 +294,12 @@
             display: inline;
         }
 
+        @media (max-width: 960px) {
+            header .cup {
+                padding: 40px 0;
+                margin-top: 0px;
+            }
+        }
         @media (min-width: 960px) {
             .dropdown {
                 display: block;
@@ -356,7 +367,7 @@
 
             .car {
                 position: absolute;
-                top: -157px;
+                top: -130px;
                 right: 0;
             }
 
@@ -364,7 +375,17 @@
                 max-width: 100%;
             }
         }
+        @media (max-width: 576px) {
+            
+            header .cup {
+                padding: 10px 0;
+                margin-top: 0px;
+            }
 
+            .icono{
+                margin-left: 0px;
+            }
+        }
         @keyframes bounce {
             50% {
                 transform: translateY(-20%);
@@ -443,10 +464,10 @@
     </script>
     <header>
         <div class="container">
-            <img src="assets/images/img-main.png" alt="El Favorito de la Afición" class="img-fluid d-none d-md-block" />
-            <img src="assets/images/img-main-mobile.png" alt="El Favorito de la Afición" class="img-fluid d-sm-block d-md-none" />
+            <img src="assets/images/jugador.png" alt="El Favorito de la Afición" class="img-fluid d-none d-md-block" />
+            <img src="assets/images/jugador-mobile.png" alt="El Favorito de la Afición" class="img-fluid d-sm-block d-md-none" />
             <div class="content">
-                <div class="row">
+                <div class="row" style="background-color: #5a0846">
                     <div class="col-lg-8 offset-lg-2">
                         <nav>
                             <div class="text-center d-sm-block d-md-none" style="margin-bottom: 15px">
@@ -465,8 +486,8 @@
                             <a href="https://marca.com" target="_blank">
                                 <img src="assets/images/marca-white.png" alt="MARCA.COM">
                             </a>
-                            <a href="https://hyundai.com" target="_blank" style="margin-left: 30px">
-                                <img src="assets/images/hyundai.png" alt="Hyundai">
+                            <a href="https://hyundai.com" target="_blank" class="icono">
+                                <img src="assets/images/hyunday-01.png" width="170" alt="Hyundai">
                             </a>
                             <div class="dropdown float-right d-none d-md-block">
                                 <a href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="text-white"><i class="fas fa-bars"></i></a>
@@ -483,12 +504,12 @@
                     </div>
                 </div>
                 <p class="text-center cup">
-                    <img src="assets/images/cup.png" alt="CUP">
+                    <!-- <img src="assets/images/cup.png" alt="CUP"> -->
                 </p>
                 <h1 class="text-center"><span>PREMIO AL JUGADOR</span><br><strong>FULL ELECTRIC, FULLPOWER</strong></h1>
                 <div class="row">
-                    <div class="col-lg-8 offset-lg-2">
-                        <p class="text-center"><strong>MARCA</strong> y <strong>Hyundai</strong> buscan al <strong>JUGADOR FAVORITO DE LA AFICIÓN</strong> de la temporada 2021/22. Vota por el jugador que crees que más se identifica con los valores de Hyundai en el terreno de juego: Potencia, reflejos, destreza, precisión y, por supuesto, Juego limpio. Entre todos los participantes <strong>sortearemos una entrada doble para acudir a la Gala de los Premios MARCA</strong>.</p>
+                    <div class="col-lg-8 offset-lg-2" style="background-color: #5a0846">
+                        <p class="text-center" style="margin-bottom: 0; padding: 10px"><strong>MARCA</strong> y <strong>Hyundai</strong> buscan al <strong>JUGADOR FAVORITO DE LA AFICIÓN</strong> de la temporada 2022/23. Vota por el jugador que crees que más se identifica con los valores de Hyundai en el terreno de juego: Potencia, reflejos, destreza, precisión y, por supuesto, Juego limpio. Entre todos los participantes <strong>sortearemos una entrada doble para acudir a la Gala de los Premios MARCA</strong>.</p>
                     </div>
                 </div>
             </div>
@@ -599,6 +620,7 @@
         const data = {
             'Alavés': [
                 'Alex Tirlea',
+                
 'De la Fuente',
 'Edgar',
 'Escalante',
