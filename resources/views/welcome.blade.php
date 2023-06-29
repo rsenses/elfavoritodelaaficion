@@ -67,7 +67,7 @@
             font-family: 'Lato', 'helvetica neue', Arial, sans-serif;
             color: #fff;
             font-size: 17px;
-            background: #5a0846;
+            background: #cc0000;
             overflow-x: hidden;
         }
 
@@ -632,7 +632,7 @@
     <footer>
         <div class="container">
             
-            <a href="https://www.hyundai.com/es/modelos/tucson.html" target="_blank" class="car"><img src="/assets/images/car-tucson.png?v2" alt="HYUNDAI TUCSON" /></a>
+            <a href="https://www.hyundai.com/es/modelos/tucson.html" target="_blank" class="car"><img src="/assets/images/car-tucson.png?v3" alt="HYUNDAI TUCSON" /></a>
             <p class="car-text float-left">
                 <u>Descubre la Gama</u><br>
                 <span>Hyundai TUCSON</span><br>
