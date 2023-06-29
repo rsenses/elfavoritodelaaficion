@@ -13,7 +13,7 @@
     <!-- Schema.org markup (Google) -->
     <meta itemprop="name" content="Premio al Jugador Full Electric, Full Power, MARCA y Hyundai" />
     <meta itemprop="description" content="MARCA y Hyundai buscan al JUGADOR FAVORITO DE LA AFICIÓN de la temporada 2022/23" />
-    <meta itemprop="image" content="https://elfavoritodelaaficion.marca.com/assets/images/img-main.jpg" />
+    <meta itemprop="image" content="https://elfavoritodelaaficion.marca.com/assets/images/jugador.png" />
     <!-- Twitter Card markup-->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site" content="@Marca" />
@@ -21,14 +21,14 @@
     <meta name="twitter:description" content="MARCA y Hyundai buscan al JUGADOR FAVORITO DE LA AFICIÓN de la temporada 2022/23" />
     <meta name="twitter:creator" content="Marca" />
     <!-- Twitter summary card with large image must be at least 280x150px -->
-    <meta name="twitter:image" content="https://elfavoritodelaaficion.marca.com/assets/images/img-main.jpg" />
+    <meta name="twitter:image" content="https://elfavoritodelaaficion.marca.com/assets/images/jugador-mobile.png" />
     <meta name="twitter:image:alt" content="MARCA y Hyundai buscan al JUGADOR FAVORITO DE LA AFICIÓN de la temporada 2022/23" />
     <!-- Open Graph markup (Facebook, Pinterest) -->
     <meta property="og:title" content="Premio al Jugador Full Electric, Full Power, MARCA y Hyundai" />
     <meta property="og:type" content="article" />
     <meta property="og:url" content="https://elfavoritodelaaficion.marca.com/" />
-    <meta property="og:image" content="https://elfavoritodelaaficion.marca.com/assets/images/img-main.jpg" />
-    <meta property="og:description" content="Lo último en implantes para una sonrisa perfecta. Todo lo que debes saber para lucir una boca perfecta con la mayor seguridad y los mejores profesionales." />
+    <meta property="og:image" content="https://elfavoritodelaaficion.marca.com/assets/images/jugador.png" />
+    <meta property="og:description" content="MARCA y Hyundai buscan al JUGADOR FAVORITO DE LA AFICIÓN de la temporada 2022/23." />
 
     <meta property="og:site_name" content="El Favorito de la Afición" />
 
@@ -1404,8 +1404,8 @@
                 $('#form').addClass('d-none');
                 $('#thanks').removeClass('d-none');
                 $('#sendButton').removeClass('loading');
-                $('.share a.facebook').attr('href', 'https://www.facebook.com/dialog/share?app_id=1067563583641276&href=https://elfavoritodelaaficion.marca.com/?cid=SMBOSO22801&s_kw=BC-facebook&quote=Yo ya he votado al mejor jugador de la temporada&redirect_uri=https://elfavoritodelaaficion.marca.com/?cid=SMBOSO22801&s_kw=BC-facebook');
-                $('.share a.twitter').attr('href', 'https://twitter.com/intent/tweet?url=https://elfavoritodelaaficion.marca.com/?cid=SMBOSO22801&s_kw=BC-twitter&amp;text=Yo ya he votado al mejor jugador de la temporada&amp;wrap_links=true');
+                $('.share a.facebook').attr('href', 'https://www.facebook.com/dialog/share?app_id=1067563583641276&href=https://elfavoritodelaaficion.marca.com/?cid=SMBOSO22801&s_kw=BC-facebook&quote=Yo ya he votado a mi jugador favorito de la temporada 22/23&redirect_uri=https://elfavoritodelaaficion.marca.com/?cid=SMBOSO22801&s_kw=BC-facebook');
+                $('.share a.twitter').attr('href', 'https://twitter.com/intent/tweet?url=https://elfavoritodelaaficion.marca.com/?cid=SMBOSO22801&s_kw=BC-twitter&amp;text=Yo ya he votado a mi jugador favorito de la temporada 22/23&amp;wrap_links=true');
             })
             .catch(error => console.error('Error!', error.message))
         });
