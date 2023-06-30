@@ -40,6 +40,7 @@ class AuthController extends Controller
             $request->session()->put('user.last_name', $user['APELLIDO1']);
             $request->session()->put('user.last_name2', $user['APELLIDO2']);
             $request->session()->put('user.zip', $user['COD_POSTAL']);
+            $request->session()->put('user.birthdate', $user['FEC_NACIMIENTO']);
 
             return redirect(route('home'));
         }

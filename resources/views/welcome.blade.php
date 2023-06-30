@@ -285,7 +285,7 @@
             margin-top: 120px;
         }
         .aclaration {
-            text-align: center; 
+            text-align: center;
             line-height: 30px;
             font-size: 12px;
             color: #002b5e;
@@ -396,7 +396,7 @@
             }
         }
         @media (max-width: 576px) {
-            
+
             header .cup {
                 padding: 10px 0;
                 margin-top: 0px;
@@ -573,6 +573,7 @@
                         <input type="hidden" name="last_name" value="{{ $user['last_name'] }}">
                         <input type="hidden" name="last_name2" value="{{ $user['last_name2'] }}">
                         <input type="hidden" name="zip" value="{{ $user['zip'] }}">
+                        <input type="hidden" name="zip" value="{{ $user['birthdate'] }}">
 
                         <div class="form-group">
                             <label for="team">Selecciona el equipo al que pertenece el jugador que quieres votar</label><br>
@@ -631,7 +632,7 @@
 
     <footer>
         <div class="container">
-            
+
             <a href="https://www.hyundai.com/es/modelos/tucson.html" target="_blank" class="car"><img src="/assets/images/car-tucson.png?v2" alt="HYUNDAI TUCSON" /></a>
             <p class="car-text float-left">
                 <u>Descubre la Gama</u><br>
@@ -657,7 +658,7 @@
     <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/js/select2.min.js"></script>
     <script>
         TMSBottom();
-            
+
         const data = {
             'Almería': [
                 "Fernando",
